@@ -1,0 +1,38 @@
+Prueba de Javier Frez valdenegro.
+Un dato antes de leer y ver todo. Le pido disculpas por el atraso de la pep, planeaba entregar un contenido similar a la hora correspondiente. pero gracias a un problema con VTR, la mayor parte de ayer y hoy (22 y 23 de agosto) estuve sin internet. Si hubiera podido trabajar en esas horas, hubiera entregado un trabajo similar a este (no voy a mentir), o talvez ligeramente mas avanzado.
+Lamento mucho los inconvenientes, es el primer programa que hago donde tengo que conectarme con una base de datos (en los cursos anteriores siempre que empezaba a trabajar en el codigo, la conexion ya estaba hecha) y de verdad que debi de haber avanzado en esta pep desde antes.
+
+Explicación de cómo funciona el programa.
+
+- El archivo principal, el backend es "app.py", el programa entero funciona al ejecutar ese programa.
+- Los archivos html se encuentran en la carpeta Templates. El archivo que tiene la entrada de los datos para la “petición” es el archivo de nombre "signup.html". Para llegar a esa pantalla desde la ventana de inicio, se tiene que hacer click en el enlace que tiene como nombre "Consigue tu permiso".
+- La página elaborada (ventana de inicio) se encuentra en http://localhost:5000/
+- Se utilizó la base de datos MySQL.
+
+
+
+(Preguntas a responder: ¿La posee? ¿porque?)
+Lista de características deseadas en un sistema distribuido:
+
+-Transparencia: Esta característica habla de la capacidad del sistema de dar la impresión de que es todos los procesos y recursos son provistos por el mismo sistema, sin informar que estos están distribuidos en múltiples computadores (en el caso de los sistemas distribuidos). En el programa elaborado, esta característica se cumple, pero no por tener una distribución bien elaborada, sino porque todo el sistema funciona en un solo computador.
+       - Acceso: El programa se presenta de igual manera en los distintos sistemas operativos. Pero no tiene variados tipos para guardar las peticiones realizadas.
+       - Ubicación: La aplicación no informa al usuario donde es que se guarda la información de su petición. Y según las normas de transparencia, este accionar es lo correcto.
+       - Migración: No existe movimiento de recursos en el sistema actual.
+       - Re-localización: Como no existe el movimiento de recursos, no hay necesidad de un plan para que el programa siga funcionando aunque se estén migrando los recursos.
+       - Replicación: El sistema no tiene necesidad de ocultar la replicación de información obtenida de parte del usuario, puesto que no realiza replicaciones.
+       - Concurrencia: Existe concurrencia en el programa, puesto que se puede usar el servicio por parte de más de un usuario al mismo tiempo sin que estos se den cuenta de que hay otro usuario. Exactamente cuantos usuarios soporta el sistema es desconocido.
+       - Falla: Esta subcategoría no se cumple, pues si el sistema llega a fallar, el usuario se dará cuenta.
+
+- Apertura: Un sistema informático es abierto si el sistema puede ser extendido de diversas maneras. Ya sea en el hardware o en el software. En el caso de este sistema, es posible mejorarlo pero más por el hecho de que es relativamente sencilla la estructura del programa, que el hecho de que este hecho con las “extensiones” en mente.
+       - Interoperabilidad: Los procesos del programa se comunican de manera directa, estando todos estos en la misma máquina. No tienen comunicación con computadores o sistemas externos.
+       - Portabilidad: El sistema no está diseñado para la incorporación de extensiones, pero es lo suficientemente sencillo como para que de igual manera se puedan incorporar. Incluyendo la incorporación, valga la redundancia, de otros sistemas.
+       - Fácil extensión: Como el sistema elaborado es tan básico, la incorporación de nuevos componentes es relativamente sencilla.
+
+- Escalabilidad: Escalabilidad habla de lo preparado que está el sistema para recibir escalabilidad horizontal y vertical. Siendo el primero cuando se aumenta la cantidad de recursos en el sistema; Y el segundo cuando las capacidades de los recursos utilizados aumentan. En el caso de este sistema, no está preparado para la escalabilidad horizontal. Se podrían conseguir más computadores. Pero el programa escrito debe de ser modificado para poder enviar la información recibida entre estos sistemas. En el caso del escalamiento vertical, un mejor computador mejoraría el rendimiento del programa, sin la necesidad de modificar el código.
+       - Particionamiento: El particionamiento del programa cuenta con archivos html para poder recibir la información, un backend elaborado por Python Flask y una base de datos MySQL. Gracias a este particionamiento, se pueden dividir estas funciones entre distintos computadores, pero como se dijo anteriormente, se debe de modificar el código.
+       - Replicar: Este sistema no implementa replica, toda la información almacenada solo tiene una copia única.
+       - Cache: No existe Cache en este sistema. Todavía no está implementada ninguna función que regrese información.
+
+- Disponibilidad: La disponibilidad del sistema es baja, puesto que todo está elaborado en un solo computador, si este servicio se ve interrumpido, ningún usuario puede ingresar una petición.
+
+- Tolerancia al error: Al igual que como se explicó en disponibilidad, si el servicio falla en el computador que soporta la aplicación, todo se cae. Pero el código si tiene funciones para prevenir algún "Crash" en el caso de detectarse un error.
